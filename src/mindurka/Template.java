@@ -38,20 +38,18 @@ public class Template extends Plugin {
             }
 
             String message = args[0];
-            String prefix = "[scarlet]Админ[] | ";
             String playerName = NetClient.colorizeName(player.id, player.name);
 
             Groups.player.each(Player::admin, otherPlayer -> {
-                otherPlayer.sendMessage("<[scarlet]A[]>" + prefix + playerName + " [gold]>[#ff4449] " + message);
+                otherPlayer.sendMessage("<[scarlet]A[]>" + playerName + " [gold]>[#ff4449] " + message);
             });
         });
         handler.<Player>register("t", "<текст...>", "Отправить командное сообщение", (args, player) -> {
             String message = args[0];
             String playerName = NetClient.colorizeName(player.id, player.name);
-            String prefix = player.admin() ? "[scarlet]Админ[white] | " : "[cyan]Игрок[white] | ";
 
             Groups.player.each(o -> o.team() == player.team(), otherPlayer -> {
-                otherPlayer.sendMessage("<[#" + player.team().color + "]T[]>" + prefix + playerName + " [gold]>[lime] " + message);
+                otherPlayer.sendMessage("<[#" + player.team().color + "]T[]>" + playerName + " [gold]>[lime] " + message);
             });
         });
     }
