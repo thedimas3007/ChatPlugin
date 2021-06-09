@@ -33,7 +33,7 @@ public class Template extends Plugin {
         handler.removeCommand("t");
         handler.<Player>register("a", "<текст...>", "Отправить сообщение от имени админа", (args, player) -> {
             if (!player.admin()) {
-                player.sendMessage("[scarlet]Сначала купи админку))0)!");
+                player.sendMessage("[scarlet]Ты не админ!");
                 return;
             }
 
