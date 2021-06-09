@@ -21,6 +21,7 @@ public class Template extends Plugin {
                 String uuid = event.player.id;
                 if (uuid.equals("GYmJmGDY2McAAAAAN8z4Bg==")) {
                     prefix = "[sky]Owner[white] | ";
+                }
                 Call.sendMessage(prefix + playerName + " [gold]>[white] " + event.message);
                 Log.info(event.player.name + " > " + event.message);
             }
