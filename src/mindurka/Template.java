@@ -20,10 +20,11 @@ public class Template extends Plugin {
             if (!event.message.startsWith("/")) {
                 String prefix = event.player.admin() ? "[scarlet]Админ[white] | [" : "[cyan]Игрок[white] | [";
                 String playerName = NetClient.colorizeName(event.player.id, event.player.name);
-                String locale = event.player.locale();
+                String loc = event.player.locale();
+                String locale = loc.toUpperCase();
                 String uuid = event.player.uuid();
                 if (uuid.equals("GYmJmGDY2McAAAAAN8z4Bg==")) {
-                    prefix = "[sky]Владелец[white] | [lime][";
+                    prefix = "[sky]Владелец[white] | [";
                 }
                 Call.sendMessage(prefix + locale + "][white]" + playerName + " [gold]>[white] " + event.message);
                 Log.info(event.player.name + " > " + event.message);
