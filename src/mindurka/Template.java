@@ -20,8 +20,7 @@ public class Template extends Plugin {
             if (!event.message.startsWith("/")) {
                 String prefix = event.player.admin() ? "[scarlet]Админ[white] | [" : "[cyan]Игрок[white] | [";
                 String playerName = NetClient.colorizeName(event.player.id, event.player.name);
-                String loc = event.player.locale();
-                String locale = loc.toUpperCase();
+                String locale = event.player.locale().toUpperCase();
                 String uuid = event.player.uuid();
                 if (uuid.equals("GYmJmGDY2McAAAAAN8z4Bg==")) {
                     prefix = "[sky]Владелец[white] | [";
